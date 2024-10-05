@@ -1,4 +1,5 @@
 .private
+db.sqlite3
 
 allstaticfiles
 alltemplates
@@ -6,3 +7,9 @@ categoryapp
 niceadmin
 media
 tracker
+
+
+changes_in_models.ps1
+script-2-backup-the-data.ps1
+script-2-restore-the-data.ps1
+script-2-update-data-model.ps1
