@@ -1,0 +1,150 @@
+{% load static %}
+{% block sidebar %}     
+
+
+
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="/admin">
+        <i class="bi bi-house-door"></i>
+        <span>Admin</span>
+      </a>
+    </li><!-- End Home Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="http://watchdog.local">
+        <i class="bi bi-house-door"></i>
+        <span>Home</span>
+      </a>
+    </li><!-- End Home Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="/">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+
+
+    <li class="nav-heading">Aspirations</li>
+    
+    {% for menu in sidebar %}
+    {% if menu.category == 'aspirations' %}
+        {% if menu.visibility == 'show' %}
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+              <i class="{{ menu.icon }}"></i>
+              <span>{{ menu.title }}</span>
+            </a>
+          </li><!-- End Profile Page Nav -->
+
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+
+    
+    <!-- End Components Nav -->
+
+    <li class="nav-heading">Areas</li>
+    
+    {% for menu in sidebar %}
+    {% if menu.category == 'areas' %}
+        {% if menu.visibility == 'show' %}
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+              <i class="{{ menu.icon }}"></i>
+              <span>{{ menu.title }}</span>
+            </a>
+          </li><!-- End Profile Page Nav -->
+
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+    <!-- End Forms Nav -->
+
+    <li class="nav-heading">Monitor</li>
+    
+    {% for menu in sidebar %}
+    {% if menu.category == 'monitor' %}
+          {% if menu.visibility == 'show' %}
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+                <i class="{{ menu.icon }}"></i>
+                <span>{{ menu.title }}</span>
+              </a>
+            </li><!-- End Profile Page Nav -->
+
+          {% endif %}
+      {% endif %}
+    {% endfor %}<!-- End Tables Nav -->
+
+
+
+    <li class="nav-heading">Personal</li>
+    
+    {% for menu in sidebar %}
+    {% if menu.category == 'personal' %}
+          {% if menu.visibility == 'show' %}
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+                <i class="{{ menu.icon }}"></i>
+                <span>{{ menu.title }}</span>
+              </a>
+            </li><!-- End Profile Page Nav -->
+
+          {% endif %}
+      {% endif %}
+    {% endfor %}<!-- End Personal Nav -->
+
+
+
+    <li class="nav-heading">Skills</li>
+    
+    {% for menu in sidebar %}
+    {% if menu.category == 'skills' %}
+          {% if menu.visibility == 'show' %}
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+                <i class="{{ menu.icon }}"></i>
+                <span>{{ menu.title }}</span>
+              </a>
+            </li><!-- End Profile Page Nav -->
+
+          {% endif %}
+      {% endif %}
+    {% endfor %}<!-- End Skills Nav -->
+
+    
+    <li class="nav-heading">Pages</li>
+
+    {% for menu in sidebar %}
+    {% if menu.category == 'page' %}
+        {% if menu.visibility == 'show' %}
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'PREVIEW_CONTENT_VIEW' menu.pk %}">
+              <i class="{{ menu.icon }}"></i>
+              <span>{{ menu.title }}</span>
+            </a>
+          </li><!-- End Profile Page Nav -->
+
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+
+{% endblock %}

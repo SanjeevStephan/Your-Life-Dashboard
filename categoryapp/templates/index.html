@@ -1,0 +1,41 @@
+{% extends 'base/nothing.html' %}
+
+{% block body %}
+
+{% include 'elements/topheader.html' %}
+
+<main id="main" class="main">
+
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+
+          
+          {% for item in breadcrumb %}
+          <li class="breadcrumb-item active"><a href="">{{ item }}</a></li>
+
+          {% endfor %}
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+
+    <section class="section dashboard">
+        <div class="row">
+
+    {% include 'elements/timesaver_sidebar.html' %}
+
+
+    {% include 'pages/dashboard.html' %}
+
+    
+    </div>
+    </section>
+
+</main>
+
+
+
+{% endblock %}
